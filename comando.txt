@@ -1,0 +1,5 @@
+aws emr add-job-flow-steps --cluster-id j-3KSK5TH6JDBF8 --region us-east-1 --steps '[{"Name":"Migrar_S3_a_HDFS","ActionOnFailure":"CONTINUE","HadoopJarStep":{"Jar":"command-runner.jar","Args":["s3-dist-cp","--src","s3://cluster-arleen/datos/","--dest","hdfs:///user/hadoop/recetas_masivas/"]}}]'
+
+ssh -i MiClaveEC1.pem hadoop@ec2-34-229-222-214.compute-1.amazonaws.com
+
+aws emr describe-cluster --cluster-id j-3KSK5TH6JDBF8 --query "Cluster.MasterPublicDnsName" --output text --region us-east-1
