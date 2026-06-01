@@ -1,0 +1,5 @@
+aws emr add-steps --cluster-id j-3UMGK3U9EK9L8 --region us-east-1 --steps '[{"Name":"Pasar textos","ActionOnFailure":"CONTINUE","Jar":"command-runner.jar","Args":["s3-dist-cp","--src","s3://cluster-arleen/prueba/","--dest","hdfs:///user/hadoop/datos/"]}]'
+
+ssh -i MiClaveEC1.pem hadoop@ec2-34-229-222-214.compute-1.amazonaws.com
+
+aws emr describe-cluster --cluster-id j-3KSK5TH6JDBF8 --query "Cluster.MasterPublicDnsName" --output text --region us-east-1

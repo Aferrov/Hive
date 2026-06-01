@@ -1,0 +1,9 @@
+credenciales.txt
+*.pem
+*.sh
+*.key
+*.pem.key
+.env
+__pycache__/
+*.pyc
+*.parquet
